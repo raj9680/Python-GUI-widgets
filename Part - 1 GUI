@@ -1,0 +1,315 @@
+#GUI PART - 1
+#Window
+#Button
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("450x300")
+##btn = Button(root, text = "Button 1")
+##btn.pack()
+##
+##root.mainloop()
+
+#----------------------Labels------------------------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("450x300")
+##
+##label = Label(root,text="Hello World")
+##label.config(text="I Love Python")
+##label.config(fg="Red")
+##label.config(font="Arial 20")
+##label.config(bg="yellow")
+##label.pack()
+##root.mainloop()
+
+#----------------------Buttons------------------------------------
+
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("450x300")
+##
+##def clicked():
+##    label.config(text="You clicked button", fg="red",bg="yellow")
+##
+##label = Label(root,text="This is Button")
+##label.pack()
+##btn = Button(root,text="Click me!",command=clicked)
+##btn.pack()
+##btn1 = Button(root,text="Disable!")
+##btn1['state']='disabled'
+##btn1.pack()
+##btn2 = Button(root,text="Normal!")
+##btn2.pack()
+
+#----------------------Entry Widget------------------------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##def call():
+##    val1 = entry.get()
+##    val2 = entry1.get()
+##    print(val1 +" "+ val2)
+##
+##entry = ttk.Entry(root,width=30)
+##entry.insert(0,"Please Enter Your Name")
+##entry.state(['disabled'])
+##entry.pack()
+##entry1 = ttk.Entry(root,width=30)
+##entry1.pack()
+##btn =Button(root, text="Click me", command = call)
+##btn.pack()
+##
+##root.mainloop()
+
+#----------------------Grid Layout------------------------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##title = ttk.Label(text = "Your Title Here",font=("Arial 15"))
+##title.grid(row = 0 ,column = 1)
+##
+##name = ttk.Label(text="name: ")
+##name.grid(row = 1, column = 0)
+##
+##entry = Entry(root, width=30)
+##entry.insert(0,"Enter your name")
+##entry.grid(row = 1 , column =1)
+##
+##paswd = ttk.Label(text="Password")
+##paswd.grid(row = 2 , column = 0)
+##entryx = Entry(root, width=30)
+##entryx.insert(0,"Enter your Password")
+##entryx.grid(row = 2 , column =1)
+##
+##btn = Button(root,width=25,text="Button")
+##btn.grid(row = 3 , column = 1 , pady= 2)
+##root.geometry("300x200")
+##root.mainloop()
+
+#----------------------Check Boxes------------------------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##root = Tk()
+##lbl = ttk.Label(text="Text Goes Here", font = ("Arial 15"))
+##lbl.grid(row = 0 , column = 1)
+##var = IntVar()
+##var.set(0)
+##cbox = Checkbutton(root , text = "Remember" , variable = var)
+##cbox.grid(row = 1 , column = 0)
+##def callme():
+##    vari = var.get()
+##    print(vari)
+##btn = Button(root , text = "Click me" , command = callme)
+##btn.grid(row = 2 , column = 1)
+##
+##root.geometry("300x200")
+##root.mainloop()
+
+#----------------------Radio Boxes------------------------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##gender = StringVar()
+##rdb = ttk.Radiobutton(root, text = "Male" , value = "Male" , var = gender)
+##rdb1 = ttk.Radiobutton(root, text = "Female" , value = "Female" , var = gender)
+##rdb1.grid(row = 0, column = 2)
+##rdb.grid(row = 0, column = 1)
+##def callme():
+##    print(gender.get())
+##btn = Button(root , text="Submit" , command = callme)
+##btn.grid(row=1 , column=1)
+##root.geometry("300x200")
+##root.mainloop()
+
+#----------------------Combo Box------------------------------------
+
+'''simple part - 1'''
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##months = StringVar()
+##cmbox = ttk.Combobox(root, textvariable = months ,state = 'readonly',
+##                     values = ('Jan','Feb','Mar','Apr'))
+##cmbox.grid(row = 0 , column = 0)
+##
+##root.geometry("300x200")
+##root.mainloop()
+
+
+'''simple part - 2'''
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##months = IntVar()
+##num = []
+##for i in range(1,20):
+##    num.append(i)
+##cmbox = ttk.Combobox(root, textvariable = months ,state = 'readonly',
+##                     values = (num))
+##cmbox.grid(row = 0 , column = 0)
+##
+##root.geometry("300x200")
+##root.mainloop()
+
+'''Getting value from Combobox'''
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##months = IntVar()
+##num = []
+##for i in range(1,20):
+##    num.append(i)
+##cmbox = ttk.Combobox(root, textvariable = months ,state = 'readonly',
+##                     values = (num))
+##cmbox.grid(row = 0 , column = 0)
+##def callme():
+##    var = months.get()
+##    print(var)
+##btn = Button(root , text = "Click me" , command = callme)
+##btn.grid(row = 1 , column = 0 )
+##
+##root.geometry("300x200")
+##root.mainloop()
+
+
+#----------------------Spin Box------------------------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##def callme():
+##    print(year.get())
+##year = StringVar()
+##spbox = Spinbox(root, from_ = 1990 ,state = 'readonly', to = 2010 , textvariable = year)
+##spbox.grid(row = 0 , column = 0)
+##btn = Button(root , text = "Get" , command = callme)
+##btn.grid(row = 1 , column = 0)
+##root.mainloop()
+##
+
+#----------------------Message Box------------------------------------
+
+##from tkinter import *
+##from tkinter import messagebox
+##
+##root = Tk()
+##root.geometry("300x200")
+##def callme():
+##    mbox = messagebox.askquestion("Delete" , "Are you Sure")
+##    if mbox == 'yes':
+##        print("Deleted")
+##    else:
+##        print("Not Deleted")
+##
+##def callme1():
+##    messagebox.showinfo("Information", "Your details has been submitted")
+##
+##
+##btn1 = Button(root , text = "Delete" , command = callme)
+##btn1.grid(row = 0 , column = 0 , padx = 20 , pady = 20)
+##
+##btn2 = Button(root , text = "Info" , command = callme1)
+##btn2.grid(row = 0 , column = 1)
+##
+##
+##root.mainloop()
+
+#----------------------Text Editor------------------------------------
+
+##from tkinter import *
+##
+##root = Tk() 
+##root.geometry("300x220")
+##def clickme():
+##    print(teditor.get(1.0,END))
+##
+##teditor = Text(root, width = 30 , height = 10 , wrap = WORD) 
+##teditor.grid(row = 0 , column =0 , padx = 25 , pady = 10)
+##teditor.insert(INSERT,"Hello there!")
+##
+##btn = Button(root , text = "Save" , command = clickme)
+##btn.grid(row = 1 , column = 0 )
+##
+##root.mainloop()
+
+#----------------------Place Geometry Manager------------------------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##def clickme():
+##    print("You clicked Button " + finput.get() + " AND "+pinput.get())
+##
+##title = Label(root , text = "Place Geometry Manager" , font = ("Verdana 12"))
+##title.place(x = 35, y = 5)
+##
+##name = Label(root, text="First Name: ", font=("Verdana 8"))
+##name.place(x = 10 , y = 45)
+##finput = Entry(root, width = 20)
+##finput.place(x = 90 , y = 45)
+##
+##password = Label(root, text="Password: ", font=("Verdana 8"))
+##password.place(x = 10 , y = 75)
+##pinput = Entry(root, width = 20)
+##pinput.place(x = 90 , y = 75)
+##
+##btn = Button(root , text="Click me", command= clickme)
+##btn.place(x=110 , y=110)
+##
+##btn1 = Button(root , text="test", command= clickme)
+##btn1.place(relx=0.5 , rely=0.5)
+##
+##
+##root.mainloop()
+
+
+#----------------------Frame Widget------------------------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##def clickme():
+##    print("Button inside Frame-1 is clicked")
+##
+##def clickme1():
+##    print("Button inside Frame-2 is clicked")
+##    
+##frame = Frame(root, width = 130 , height = 85 , bg = 'yellow')
+##frame.place(x = 0 , y = 0)
+##
+##btn = Button(frame, text = "click me" , command = clickme)
+##btn.place(x = 33, y = 25)
+##
+##frame1 = Frame(root, width = 130 , height = 85 , bg = 'light green')
+##frame1.place(x = 170 , y = 0)
+##btn1 = Button(frame1, text = "click me" , command = clickme1)
+##btn1.place(x = 33, y = 25)
+##
+##lbl_frame = LabelFrame(root , text = "Search box",width = 130 , height = 85)
+##label = Label(lbl_frame, text = "Search: ")
+##label.pack(side = LEFT)
+##inputt = Entry(lbl_frame , width = 25)
+##inputt.pack(side = LEFT,padx = 3,pady=3)
+##lbl_frame.pack(side = LEFT,pady = 80)
+##root.mainloop()
