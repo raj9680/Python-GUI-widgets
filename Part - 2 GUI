@@ -1,0 +1,455 @@
+'''PYTHON GUI PART-2'''
+
+#-------------------Progress Bar------------------
+##
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##pbar = ttk.Progressbar(root,orient=HORIZONTAL , length = 200)
+##pbar.pack(pady = 20)
+##pbar.config(mode = 'indeterminate')
+##pbar.start()
+##pbar.stop()
+##
+##pbar.config(mode='determinate')
+##pbar.start()
+##pbar.stop()
+##
+##root.mainloop()
+
+
+#-------------------Scale Bar------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##root.geometry("300x200")
+##sbar = ttk.Scale(root, orient = HORIZONTAL , length = 200)
+##sbar.pack(pady = 20)
+##
+##root.mainloop()
+
+#-------------------Progress bar with Scale Bar------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##root.geometry("300x200")
+##pbar = ttk.Progressbar(root, orient = HORIZONTAL, length = 200,)
+##pbar.pack(pady = 20)
+##pbar.config(mode = "determinate" , maximum = 50.0 , value = 10.0)
+##pbar.start()
+##pbar.stop()
+##val = DoubleVar()
+##pbar.config(variable = val)
+##sbar = ttk.Scale(root, orient = HORIZONTAL , length = 200 ,
+##                 var = val , from_ = 0.0 , to = 50.0)
+##sbar.pack(pady = 20)
+##
+##root.mainloop()
+
+
+#-------------------Panned Window Widget------------------
+
+
+'''NOT IMPORTANT'''    #(VID - 2 adv-widget)
+
+#-------------------Tabs------------------
+ 
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##tabs = ttk.Notebook(root)
+##tabs.pack(expand = True , fill = BOTH) #important
+##
+##tab1 = Frame(tabs)
+##tab2 = Frame(tabs)
+##
+##tabs.add(tab1 , text = 'First Tab')
+##tabs.add(tab2 , text = 'Second Tab')
+##
+##root.mainloop()
+
+
+#-------------------Tabs with ICONS------------------
+ 
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##tabs = ttk.Notebook(root)
+##tabs.pack(expand = True , fill = BOTH) #important
+###icon
+##icons = PhotoImage(file = "icons/chrome.png")
+##
+##tab1 = Frame(tabs)
+##tab2 = Frame(tabs)
+##
+##tabs.add(tab1 ,image = icons, text = 'First Tab',compound = LEFT)
+##tabs.add(tab2 , text = 'Second Tab')
+##
+##root.mainloop()
+
+
+
+#-------------------LIST BOX WIDGET------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##def print_me():
+##    data = listbox.curselection()
+##    for x in data:
+##        print(listbox.get(x))
+##root.geometry("300x200")
+##listbox = Listbox(root,selectmode = MULTIPLE)
+##listbox.insert(0,"Python")
+##listbox.insert(1,"PHP")
+##listbox.insert(2,"Java")
+##listbox.pack(pady = 5)
+##
+##
+##def delete_me():
+##    ded = listbox.curselection()
+##    for x in ded:
+##        listbox.delete(x)
+##btn = Button(root, text="Print" , command = print_me)
+##btn.place(x = 20 , y = 20)
+##btn1 = Button(root , text = "Delete" , command = delete_me)
+##btn1.place(x= 60 , y = 20)
+##root.mainloop()
+
+#-------------------IMAGES------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##img = PhotoImage(file = "icons/chrome.png")
+##label = Label(root, image = img)
+##label.pack()
+##
+##root.mainloop()
+
+
+#-------------------How to create a Menu for App------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##menuBar = Menu(root)
+##root.config(menu = menuBar)
+##
+##file = Menu(menuBar)
+##menuBar.add_cascade(menu = file , label = "File")
+##
+##root.mainloop()
+
+
+#-------------------How to create multiple Menus for App------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##menuBar = Menu(root)
+##root.config(menu = menuBar)
+##
+##file = Menu(menuBar)
+##menuBar.add_cascade(menu = file , label = "File")
+##
+##edit = Menu(menuBar)
+##menuBar.add_cascade(menu = edit , label = "Edit")
+##
+##view = Menu(menuBar)
+##menuBar.add_cascade(menu = view , label = "View")
+##
+##
+##root.mainloop()
+
+
+#-------------------How to create Submenu inside menu------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##menuBar = Menu(root)
+##root.config(menu = menuBar)
+##
+##file = Menu(menuBar , tearoff = 0)
+##menuBar.add_cascade(menu = file , label = "File")
+##file.add_command(label = 'New')
+##file.add_command(label = 'Save')
+##file.add_command(label = 'Exit')
+##
+##
+##root.mainloop()
+
+
+#-------------------How to create Separator inside menu------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##menuBar = Menu(root)
+##root.config(menu = menuBar)
+##
+##file = Menu(menuBar , tearoff = 0)
+##menuBar.add_cascade(menu = file , label = "File")
+##file.add_command(label = 'New')
+##file.add_separator()
+##file.add_command(label = 'Save')
+##file.add_command(label = 'Exit')
+##
+##
+##root.mainloop()
+##
+
+
+#-------------------How to use icons inside menu------------------
+
+##from tkinter import *
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##menuBar = Menu(root)
+##root.config(menu = menuBar)
+##
+##file = Menu(menuBar , tearoff = 0)
+##menuBar.add_cascade(menu = file , label = "File")
+##file.add_command(label = 'New')
+##
+###separator
+##file.add_separator()
+##
+###icons
+##icon = PhotoImage(file = 'icons/chrome.png')
+##file.add_command(label = 'Save' , image = icon , compound = LEFT)
+##file.add_command(label = 'Exit')
+##
+##
+##root.mainloop()
+
+
+#-------------------How to use command function inside menu------------------
+
+##from tkinter import *
+##from tkinter import messagebox
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##menuBar = Menu(root)
+##root.config(menu = menuBar)
+##
+##def call():
+##    result = messagebox.askquestion("COnfirm" , "Do You want to Exit")
+##    if result == "yes":
+##        root.destroy()
+##    else:
+##        print("No Clicked")
+##        pass
+##    
+##file = Menu(menuBar , tearoff = 0)
+##menuBar.add_cascade( menu = file , label = "File" )
+##file.add_command(label = "Exit" , command = call)
+##
+##root.mainloop()
+
+
+#-------------------Tree View------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##treeview = ttk.Treeview(root , height = 7)
+##treeview.pack(pady = 15)
+##
+###function Definition
+##def call_me(event):
+##    item = treeview.identify('item' , event.x , event.y)
+##    print("You clicked on ", format(treeview.item(item,"text")))
+##
+###inserting elements inside treeview widget
+##treeview.insert('' , '0', 'item1' , text = 'First Item')
+##treeview.insert('' , '1', 'item2' , text = 'Second Item')
+##treeview.insert('' , '2', 'item3' , text = 'Three Item')
+##treeview.insert('' , '3', 'item4' , text = 'Fourth Item')
+##
+###moving elements
+##treeview.move('item3','item2','end')
+##
+###command functions
+##'''Note we mostly use double click event on treeview widgets'''
+##treeview.bind('<Double-1>' , call_me)
+##
+##root.mainloop()
+
+
+#-------------------Scroll Bar------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##
+##root = Tk()
+##root.geometry("300x200")
+##textbox = Text(root, width = 30 , height = 10)
+##textbox.grid(row = 0 , column = 0)
+##
+###Creating scroll bar
+##sbar = ttk.Scrollbar(root, orient = VERTICAL , command = textbox.yview)
+##sbar.grid(row = 0 , column = 1 , sticky = N+S)
+##
+###setting up scrollbar (IMPORTANT)
+##textbox.config(yscrollcommand = sbar.set) 
+##root.geometry("300x200")
+##root.mainloop()
+
+'''Important point to notice , #setting up scrol bar AND sticky concept'''
+
+
+#-------------------Canvas Widget------------------
+
+
+'''mainly canvas widget used to draw lines , create shapes like circle , rectangle etc'''
+
+#from tkinter import *
+#from tkinter import ttk
+
+#root = Tk()
+#root.geometry("650x550")
+
+#creating canvas
+#canvas = Canvas(root, width = 550 , height = 350 , bg = 'white')
+#canvas.pack(pady = 20)
+
+#drawing Line on canvas
+##line = canvas.create_line(100,250,360,25)
+##canvas.itemconfigure(line,fill = 'red' , width = 10)
+
+#drawing Triangle on canvas
+#line2 = canvas.create_line(25,50,150,150,250,140,20,50 , fill='yellow' , width = 5)
+
+#drawing Text on canvas
+#line3 = canvas.create_text(80,100 , text= 'Hello Python' , font = ('Times',15 , 'bold'))
+
+#drawing Rectangle on canvas
+#line4 = canvas.create_rectangle(150,150,250,200 , fill = 'green' , width = 5)
+
+#drawing Oval on canvas
+#line5 = canvas.create_oval(350,350,250,200 , fill = 'green' , width = 5)
+
+#drawing Arc on canvas
+#line5 = canvas.create_arc(180,20,30,80 , fill = 'green' , width = 2)
+
+#drawing Image on canvas
+#icon = PhotoImage(file = 'icons/chrome.png')
+#line5 = canvas.create_image(150,200 , image = icon)
+
+#lift
+'''this is used to solve the overlay problems when multile items cover-ups'''
+#canvas.lift(line4)
+
+##root.mainloop()
+
+
+#-------------------Themes and Styles------------------
+
+##from tkinter import *
+##from tkinter import ttk
+##from ttkthemes import themed_tk as tk
+##
+##root = tk.ThemedTk()
+##root.get_themes()
+##root.set_theme("arc")
+#Theme Names  aquativo,arc,black,blue,clearlooks,elegance,itft1,kroc
+
+'''Note : thmes only work with ttk elements ie. ttk.Buttons etc'''
+
+
+#-------------------File Dialog------------------
+
+
+##from tkinter import *
+##from tkinter import filedialog
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##def call_me():
+##    file_name = filedialog.askopenfilename(initialdir = '/' , title='Select a file',
+##                                           filetypes= (("Text Files",".txt"),("All files","*.*")))
+##    content = open(file_name).read()
+##    texteditor.insert(END,content)
+##
+##texteditor = Text(root, width = 30 , height = 8)
+##texteditor.pack(pady = 15)
+##
+##btn = Button(root, text="Open", command = call_me)
+##btn.pack()
+##
+##root.mainloop()
+
+
+#-------------------File Dialog------------------
+
+##from tkinter import *
+##from tkinter import filedialog
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##def save_file():
+##    file_name = filedialog.asksaveasfile(mode = 'w' , defaultextension='.txt')
+##    if file_name is None:
+##        return
+##    content = texteditor.get(1.0,'end-1c')
+##    file_name.write(content)
+##
+##texteditor = Text(root, width = 30 , height = 8)
+##texteditor.pack(pady = 15)
+##
+##btn = Button(root, text="Save", command = save_file)
+##btn.pack()
+##
+##root.mainloop()
+
+
+#-------------------Color Dialog------------------
+
+
+##from tkinter import *
+##from tkinter import filedialog,colorchooser
+##
+##root = Tk()
+##root.geometry("300x200")
+##
+##def choose_color():
+##    colors = colorchooser.askcolor()
+##    print(colors)
+##
+##btn = Button(root, text="Choose Color", command = choose_color)
+##btn.pack(pady = 40)
+##
+##root.mainloop()
+
+
